@@ -1,0 +1,24 @@
+plugins {
+  id "com.linkedin.python-sdist" version "0.4.9"
+}
+python {
+  // force to use a specific version for a plugin
+  forceVersion('pypi', 'pip', '7.1.2')
+  // set the test directory to be used by py.test
+  // by default it is test directory.
+  testDir = file('tests')
+
+  // Use a specific python version if it is available in the PATH it
+  // will use it
+  details.prependExecutableDirectory(new File('/usr/bin/python3.5'))
+  // or details.appendExecutableDirectory(new File('/usr/bin/python3.4'))
+  details.pythonVersion = '3.5'
+}
+dependencies {
+    python 'pypi:requests:2.9.1'
+    test 'pypi:mock:1.3.0'
+}
+
+repositories {
+   pyGradlePyPi()
+}

@@ -5,7 +5,8 @@ class Stack(object):
         self.items = []
 
     def is_empty(self):
-        """Returns true if stack is empty, returns false if stack has an item"""
+        """Returns true if stack is empty, returns false if stack has an
+        item"""
         return self.items == []
 
     def push(self, item):
@@ -23,4 +24,3 @@ class Stack(object):
     def size(self):
         """returns the size of the stack, how many items are in the stack"""
         return len(self.items)
-        
